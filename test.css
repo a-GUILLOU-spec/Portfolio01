@@ -1,0 +1,698 @@
+html {
+    scroll-behavior: smooth;
+}
+/* 1. Réinitialisation et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+    padding-top: 80px; /* Espace pour ne pas que le contenu passe sous le menu fixe */
+
+}
+
+/* 2. Style du Bandeau (Header) */
+header {
+    background-color: #2c3e50;
+    color: white;
+    height: 70px;
+    width: 100%;
+    position: fixed; /* Le menu reste en haut lors du défilement */
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* Espace entre les onglets */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3498db; /* Changement de couleur au survol */
+}
+
+/* 3. Mise en page du contenu */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    text-align: justify;
+    background: white;
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+section1 {
+    text-align: center;
+    background: #2c3e50;
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+section2 {
+    text-align: justify;
+    background: #2c3e50;
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+
+}
+h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+h5 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+h6 {
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+
+ul {
+    margin-left: 20px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: #ddd;
+    margin: 40px 0;
+}
+
+/* 4. Pied de page */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.image-profil {
+    width: 300px;        /* Largeur de l'image */
+    height: auto;       /* Garde les proportions */
+    border-radius: 10px; /* Optionnel : arrondit les coins */
+    display: block;
+    float: left;        /* Pousse l'image à gauche et fait monter le texte à droite */
+    margin-right: 15px; /* Empêche le texte de coller physiquement à l'image */
+    margin-bottom: 5px;
+    border: 4px solid #2c3e50;
+}
+
+.conteneur-1 {
+  display: flex;       /* Aligne les enfants horizontalement */
+  align-items: center; /* Aligne verticalement le texte au milieu de la photo */
+  gap: 20px;           /* Crée un espace entre l'image et le texte */
+}
+
+pindex {
+  color: rgb(255, 255, 255); /* Utilise un nom de couleur */
+}
+/*-----------------------------------------------------------*/
+/* Le bouton rectangulaire */
+.bouton-rectangulaire {
+    display: inline-block;
+    border-radius: 8px;  /*arrondi*/
+    background-color: #2c3e50;
+    color: white;              /* Texte en blanc */
+    padding: 18px 35px;        /* Taille du bouton */
+    font-size: 1.1rem;         /* Texte bien lisible */
+    font-weight: bold;         /* Texte en gras */
+    text-decoration: none;     /* Enlève le souligné du lien */
+    text-transform: uppercase; /* Met le texte en majuscules (style bouton pro) */
+    letter-spacing: 1px;       /* Espace légèrement les lettres */  
+    text-align: center;  
+    /* Petit effet d'ombre porté pour donner du relief */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    
+    /* Transition fluide pour l'effet au survol */
+    transition: all 0.3s ease;
+}
+
+/* Effet au survol (hover) */
+.bouton-rectangulaire:hover {
+    background-color: #e67e22; /* Change de couleur au survol (votre orange) */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* L'ombre s'accentue */
+    transform: translateY(-3px); /* Le bouton se lève légèrement */
+}
+
+.conteneur-bouton {
+    display: flex;          /* Active le mode Flexbox */
+    justify-content: center; /* Centre les boutons horizontalement */
+    gap: 8px;              /* Définit l'espace précis entre les deux boutons */
+    margin-top: 8px;       /* Ajoute un peu d'espace au-dessus du bloc */
+    flex-wrap: wrap;        /* Permet aux boutons de passer l'un sous l'autre sur mobile */
+}
+/*---------------------------------------------------------------------*/
+#info {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center; /* Centre le groupe de boutons dans la section */
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;   /* Un peu plus de marge en haut pour la flèche */
+    padding-left: 40px;
+    border-left: 3px solid #2c3e50; /* On épaissit un peu la ligne pour le style */
+}
+
+.timeline2 {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;   /* Un peu plus de marge en haut pour la flèche */
+    padding-left: 40px;
+    border-left: 3px solid #2c3e50; /* On épaissit un peu la ligne pour le style */
+}
+
+/* Création de la pointe de la flèche en bas de la ligne */
+.timeline::after {
+    content: '';
+    position: absolute;
+    bottom: 600px;       /* Place la pointe tout en bas de la section */
+    left: -11px;         /* Aligne la pointe sur la ligne (ajuste selon l'épaisseur) */
+    
+    /* Dessin du triangle avec les bordures */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid #2c3e50; /* La couleur doit être la même que ta ligne */
+}
+
+.timeline2::after {
+    content: '';
+    position: absolute;
+    bottom: 350px;       /* Place la pointe tout en bas de la section */
+    left: -11px;         /* Aligne la pointe sur la ligne (ajuste selon l'épaisseur) */
+    
+    /* Dessin du triangle avec les bordures */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid #2c3e50; /* La couleur doit être la même que ta ligne */
+}
+/* Chaque bloc de diplôme */
+.etape {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Les petits points colorés sur la ligne */
+.point {
+    position: absolute;
+    left: -51px; /* Aligné sur la ligne verticale */
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #2c3e50;
+}
+
+/* Couleurs des points */
+.bleu { background-color: #00d1ff; box-shadow: 0 0 10px #00d1ff; }
+.vert { background-color: #00ff2f; box-shadow: 0 0 10px #00ff2f; }
+
+/* Les cartes noires */
+.carte {
+    background-color: #2c3e50; /* Gris très sombre */
+    border: 1px solid #2c3e50;
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    transition: transform 0.3s;
+}
+
+.carte:hover {
+    transform: translateX(10px); /* Petit effet de glissement au survol */
+}
+
+/* Typographie */
+.dates { font-size: 0.85rem; font-weight: bold; }
+.bleu-texte { color: #00d1ff; }
+.vert-texte { color: #00ff2f; }
+.carte h3 { margin: 10px 0 5px 0; font-size: 1.2rem; }
+.etablissement { color: #94a3b8; font-size: 0.9rem; }
+
+.carte.cliquable {
+    display: block;          /* Pour que tout le rectangle soit cliquable */
+    text-decoration: none;   /* Enlève le souligné */
+    color: inherit;          /* Garde les couleurs du texte définies avant */
+    cursor: pointer;
+}
+/*----------------------------------------------------------------------------------*/
+.popup-info {
+    position: absolute;
+    bottom: 110%;      /* S'affiche au-dessus de la carte */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Centré et légèrement décalé */
+    width: 350px;
+    background-color: #1f2937;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #374151;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 100;      /* Passe au-dessus de tout le reste */
+    
+    /* Effet d'apparition */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none; /* Évite que le pop-up ne clignote si on passe dessus */
+}
+
+/* Petit triangle en bas du pop-up */
+.popup-info::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1f2937 transparent transparent transparent;
+}
+
+/* --- ACTION AU SURVOL --- */
+.carte:hover .popup-info {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0px); /* Le pop-up remonte doucement */
+}
+/*-------------------------------------------------------------------------------------*/
+.carte-projet {
+    background-color: #2c3e50; /* Couleur de fond sombre (bleu-gris) de l'image */
+    color: white;             /* Texte en blanc */
+    padding: 30px;            /* Espace généreux à l'intérieur */
+    margin-bottom: 25px;      /* Espace entre chaque carte */
+    border-radius: 12px;      /* Bords arrondis comme sur l'image */
+    
+    /* Une petite ombre pour le relief et le détacher du fond */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    
+    transition: transform 0.3s ease; /* Effet fluide au survol */
+}
+
+/* Optionnel : Effet au survol pour rendre la carte interactive */
+.carte-projet:hover {
+    transform: translateY(-5px); /* La carte monte légèrement */
+}
+
+.carte-projet {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    cursor: pointer; /* Indique que c'est cliquable */
+    transition: transform 0.3s ease, background-color 0.3s;
+    position: relative;
+}
+
+.info-clic {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 0.8rem;
+    color: #00d1ff; /* Ta couleur d'accent */
+    opacity: 0.7;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Passe au-dessus de tout */
+    display: none; /* CACHÉ PAR DÉFAUT */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Affiché quand la modale est ouverte */
+.modal-overlay.open {
+    display: flex;
+}
+
+/* Le fond sombre */
+.modal-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.286); /* Noir transparent */
+}
+
+/* Le contenu de la fenêtre */
+.modal-content {
+    background-color: #2c3e50; /* Gris très sombre */
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh; /* Ne dépasse pas 90% de la hauteur de l'écran */
+    border-radius: 20px;
+    overflow-y: auto; /* Ajoute un scroll si le texte est trop long */
+    position: relative;
+    z-index: 1001;
+    color: black;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.7);
+}
+
+/*---------------------------------------projet---------------------------------------------------*/
+/* Entête avec l'image */
+.modal-header {
+    position: relative;
+    height: 300px; /* Ajuste la hauteur */
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image s'adapte sans se déformer */
+}
+
+/* Le dégradé noir sur l'image */
+.header-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(26,26,26,1) 0%, rgba(26,26,26,0) 100%);
+}
+
+/* Bouton fermer (croix) */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+/* Corps du texte */
+.modal-body {
+    padding: 30px;
+}
+
+.modal-body h3 {
+    color: white;
+    margin-bottom: 20px;
+    border-left: 3px solid #00d1ff; /* Le petit trait bleu */
+    padding-left: 10px;
+}
+
+/* Grille d'infos (Rôle, Équipe...) */
+
+
+.info-grid {
+    display: grid;
+    /* On passe sur une base de 6 colonnes pour diviser facilement par 3 et par 2 */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+/* Les 3 premiers blocs prennent chacun 2 colonnes (6 / 3 = 2) */
+.info-grid .info-block:nth-child(1),
+.info-grid .info-block:nth-child(2),
+.info-grid .info-block:nth-child(3) {
+    grid-column: span 2;
+}
+
+/* Les 2 blocs du dessous prennent chacun 3 colonnes (6 / 2 = 3) */
+.info-grid .info-block:nth-child(4),
+.info-grid .info-block:nth-child(5) {
+    grid-column: span 3;
+}
+
+.info-block {
+    background-color: white; /* Un peu plus clair que le fond */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;        /* LIGNE RAJOUTÉE : Aligne le texte à gauche */
+}
+
+/* OPTIONNEL : Pour éviter que les puces de tes listes se baladent */
+.info-block ul {
+    list-style-position: inside; 
+    padding-left: 0;
+}
+
+.info-block h4 {
+    color: #666; /* Gris clair */
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.description {
+    line-height: 1.6;
+    color: #ccc;
+    font-style: italic;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+
+.onglets-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Alignement des boutons à gauche */
+.onglets-boutons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: -1px; /* Pour que le bouton "colle" au rectangle */
+    z-index: 2; /* Passe au-dessus de la bordure du rectangle */
+}
+
+/* Style des boutons */
+.tab-btn {
+    background-color: #2c3e50; /* Couleur sombre comme tes cartes */
+    color: #ccc;
+    border: 1px solid #34495e;
+    border-bottom: none; /* Pas de bordure en bas pour l'effet d'onglet */
+    padding: 10px 20px;
+    border-radius: 8px 8px 0 0; /* Arrondis en haut seulement */
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Style du bouton actif */
+.tab-btn.active {
+    background-color: white; /* Fond blanc */
+    color: #1a1a1a;          /* Texte sombre */
+    border: 1px solid #ccc;
+    border-bottom: 1px solid white; /* Cache la bordure du rectangle */
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: #3e5871;
+    color: white;
+}
+
+/* STYLE DU RECTANGLE DE CONTENU (BLANC) */
+.tab-content {
+    background-color: white; /* Rectangle blanc */
+    color: #1a1a1a;          /* Texte sombre pour la lisibilité */
+    padding: 25px;
+    border-radius: 0 12px 12px 12px; /* Arrondis sauf en haut à gauche */
+    border: 1px solid #ccc;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    
+    /* Gestion de l'affichage */
+    display: none; /* Caché par défaut */
+}
+
+/* Affiché quand l'onglet est actif */
+.tab-content.active {
+    display: block;
+}
+
+/* Style du titre à l'intérieur du rectangle blanc */
+.tab-content h3 {
+    color: #1a1a1a;
+    border-left: 3px solid #00d1ff; /* Ton trait bleu GEII */
+    padding-left: 10px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.tab-content p {
+    line-height: 1.6;
+    margin: 0;
+}
+
+/*----------------------*/
+
+.conception-liste {
+    display: flex;
+    flex-direction: column; /* Empile les rangées verticalement */
+    gap: 20px; /* Espace entre chaque rangée */
+    margin-top: 20px;
+}
+
+/* Une rangée complète : Image + Texte */
+.conception-row {
+    display: flex;
+    align-items: center; /* Centre verticalement l'image et le texte */
+    gap: 15px; /* Espace entre l'image et le bloc de texte */
+}
+
+/* Bloc Image */
+.image-bloc {
+    flex: 0 0 300px; /* L'image a une largeur fixe de 150px */
+}
+
+.image-bloc img {
+    width: 100%;
+    height: 300px; /* Hauteur fixe pour que toutes les images soient pareilles */
+    object-fit: cover; /* L'image s'adapte sans se déformer */
+    border-radius: 8px;
+    border: 2px solid #2c3e50;
+}
+
+/* Bloc Texte (contenant les 2 rectangles bleus) */
+.texte-bloc {
+    flex: 1; /* Prend tout l'espace restant à droite */
+    display: flex;
+    flex-direction: column; /* Empile les 2 rectangles bleus */
+    gap: 8px; /* Espace entre les 2 rectangles bleus */
+}
+
+/* STYLE DES RECTANGLES BLEUS */
+.rectangle-bleu {
+    background-color: #2c3e50; /* Ton bleu GEII */
+    color: #1a1a1a;          /* Texte sombre pour contraster */
+    padding: 10px 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.rectangle-bleu h4 {
+    margin: 0 0 3px 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.rectangle-bleu p {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.3;
+}
+#---------------
+/* Style pour la page compétences */
+.carte-competence {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.carte-competence:hover {
+    transform: translateY(-5px);
+}
+
+/* Boutons AC à l'intérieur des pop-ups */
+.modal-content-comp {
+    background: #2c3e50;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.grille-liens-projets {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.bouton-ac {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f6f9;
+    padding: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    border-left: 5px solid #2c3e50; /* Joli liseré bleu GEII */
+    transition: background 0.2s;
+}
+
+.bouton-ac:hover {
+    background: #e9ecef;
+}
+
+.badge-auto {
+    background: #2c3e50;
+    color: white;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    margin-top: 8px;
+    line-height: 1.3;
+}

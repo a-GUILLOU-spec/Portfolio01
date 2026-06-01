@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes projets</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="01_index.html">Accueil</a></li>
+                <li><a href="02_propos.html">À propos</a></li>
+                <li><a href="04_competence.html">Compétences</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteneur-projets">
+        <section>
+            <h1>Projets</h1>
+            <p>Découvrez mon expertise en action ! Parcourez mes projets académiques et professionnels les plus marquants. Un simple clic vous permettra d'explorer les coulisses de chaque réalisation et les compétences mobilisées.</p>
+        </section>
+
+        <section id="projet-geii">
+            <h1>Mes projets en BUT GEII</h1>
+
+            <div class="carte-projet" onclick="ouvrirModal('modal-rds')">
+                <h2>ROBOT MINI-SUMO (RMS)</h2>
+                <p>Conception et réalisation d'un Robot Mini Sumo (RMS) autonome, de l'architecture matérielle à la programmation des stratégies de combat. Le projet s'articule autour de deux briques technologiques majeures : l'intégration des systèmes de détection/intelligence embarquée et l'optimisation de la chaîne de puissance/motorisation.</p>
+                <span class="info-clic">Cliquez pour voir les détails du Robot Mini-Sumo</span>
+            </div>
+
+            <div id="modal-rds" class="modal-overlay">
+                <div class="modal-background" onclick="fermerModal('modal-rds')"></div>
+                <div class="modal-content">
+                    <button class="modal-close" onclick="fermerModal('modal-rds')">&times;</button>
+                    
+                    <div class="modal-header">
+                        <img src="RMS.png" alt="PCB du Robot Mini Sumo" class="header-image">
+                        <div class="header-overlay">
+                            <div class="badges">
+                                <span class="badge sae"><h2>SAE → S3</h2></span>
+                                <span class="badge date"><h2>Septembre 2025 - Décembre 2025</h2></span>
+                            </div>
+                            <h2>RMS</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <h3>Contexte</h3>
+                        <div class="info-grid">
+                            <div class="info-block">
+                                <h4>OBJECTIFS</h4>
+                                <p>→ <strong>Conception</strong> électronique & routage d'un Shield</p>
+                                <p>→ Développement informatique pour que le robot soit  autonome</p>
+                                <p>→ <strong>Fabrication</strong> de la carte éléctronique</p>
+                                <p>→ Intégration d'une liaison infrarouge pour démarrer le programme</p>
+                                <p>→ <strong>Validation</strong> et tests croisés des systèmes</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>ÉQUIPE</h4>
+                                <p>→ Groupe projet de <strong>5 personnes</strong></p>
+                                <p>→ Division du travail en 2</p>
+                                <p>→ <strong>Organisation</strong> en binômes et trinôme</p>
+                                <p>→ Procédure de validation croisée : j'ai vérifier les parties que je n'ai pas conçue</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>RÔLE</h4>
+                                <p>→ Sélection des composants, saisie du schéma électrique et routage complet du PCB (Shield) sous KiCad.</p>
+                                <p>→ En charge du <strong>bloc Énergie</strong> (alimentation du robot)</p>
+                                <p>→ En charge du <strong>bloc Traitement</strong> (convertion des informations des capteurs en un signal)</p>
+                                <p>→ Programmation de la stratégie de combat</p>
+                                <p>→ <strong>Vérificateur</strong> des blocs  <strong>acquisition, action</strong>:</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>SPÉCIFICATIONS TECHNIQUES</h4>
+                                <p>→ Architecture matérielle : Microcontrôleur ATmega328P (Carte Arduino Uno) et <strong>Shield</strong>.</p>
+                                <p>→ Chaîne de perception : <strong>Capteurs optiques</strong> pour la détection et la poursuite continue de l'adversaire, et <strong>récepteur IR</strong> pour le module de démarrage de sécurité.</p>
+                                <p>→ Chaîne de puissance : <strong>Intégration d'un pont en H</strong> (driver de moteurs) directement sur le Shield pour le contrôle des moteurs à courant continu.</p>
+                                <p>→ Stratégie logicielle : Algorithme optimisé <strong>sans capteur de ligne</strong> (rotation continue sur site pour verrouiller l'adversaire dès le départ, garantissant qu'il reste toujours face au robot), économie d'argent.</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>ENVIRONNEMENT LOGICIEL</h4>
+                                <p>→ Saisie de schéma &amp; Simulation : <strong>KiCad</strong></p>
+                                <p>→ Conception de circuits imprimés : <strong>KiCad</strong></p>
+                                <p>→ Programmation embarquée : <strong>Arduino IDE</strong> (Langage C)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="onglets-container">
+                            <div class="onglets-boutons">
+                                <button class="tab-btn active" onclick="changerOnglet(event, 'conception-rds')">Conception</button>
+                                <button class="tab-btn" onclick="changerOnglet(event, 'verification-rds')">Vérification</button>
+                                <button class="tab-btn" onclick="changerOnglet(event, 'maintenance-rds')">Maintenance</button>            
+                            </div>
+
+                            <div id="conception-rds" class="tab-content active">
+                                <h3>Conception</h3>
+                                <p class="intro-conception">Conception du robot</p>
+
+                                <div class="conception-liste">
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="RMS_21_01.png" alt="Algorigramme">
+                                                <figcaption>Schéma d'implantation du pont diviseur de tension pour batterie LiPo</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC21.01 : Proposer des solutions techniques liées à l'analyse fonctionnelle</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Solutions techniques</h5>
+                                                <h6>Pour répondre à l'exigence de sécurité de la batterie LiPo (EXIG_SECUR_BATT) : <ul><li>j'ai intégré et dimensionné un <strong>pont diviseur de tension</strong> basé sur des résistances normalisées (série E12) afin de surveiller le seuil critique de 6,7 V.</ul></li><ul><li>Associé à un <strong>régulateur linéaire</strong>, ce système garantit une alimentation stable à 5 V pour la logique de commande.</ul></li></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="RMS_21_02.png" alt="Algorigramme">
+                                                <figcaption>Prototype de test et de filtrage matériel du capteur optique</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC21.02 : Dérisquer les solutions techniques retenues</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Dérisquage de la solution technique</h5>
+                                                <h6>j’ai participé à la phase de prototypage afin de confronter la théorie à la réalité physique du capteur optique. Le risque majeur identifié était l'instabilité des relevés et la présence d'une zone d'ombre critique. Pour lever ce doute technique avant l'intégration finale, nous avons mis en œuvre un prototype de test (image ci-contre) combinant un filtrage matériel et une stratégie logicielle. J'ai ainsi participé à l'analyse des résultats expérimentaux en mesurant précisément les tensions de sortie du capteur face à un obstacle.</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="conteneur-bouton">
+                                    <a href="RMS_DDC.pdf" download class="bouton-rectangulaire">Télécharger le Document de Conception (DDC)</a>
+                                    <a href="RMS_CDC.pdf" download="KAH_CDC.pdf" class="bouton-rectangulaire">
+                                            Télécharger le cahier des Charges (CDC)
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div id="verification-rds" class="tab-content">
+                                <h3>Vérification</h3>
+                                <p class="intro-conception">Vérification du bon fonctionnement du robot</p>
+                                <div class="conception-liste">
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="RMS_22_01.png" alt="Test capteur">
+                                                <figcaption>Banc d'essai de consommation de courant des moteurs à puissance maximale</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC22.01 : Identifier les tests et mesures à mettre en place pour valider le fonctionnement d'un système</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Test de l'exigence autonomie</h5>
+                                                <h6>Pour valider l'exigence d'autonomie, cet essai vise à vérifier que le robot mini-sumo est capable de se déplacer en continu pendant au moins 65 minutes, ce qui équivaut à 15 minutes de combat réel. La stratégie consiste à mesurer, à l'aide d'un ampèremètre, la consommation électrique du robot dans sa configuration la plus contraignante. Les moteurs à courant continu représentant la principale source de dépense énergétique, le relevé est effectué lors d'un déplacement en ligne droite, phase durant laquelle les deux actionneurs sont sollicités simultanément à leur puissance maximale.</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="RMS_22_02.png" alt="Test capteur">
+                                                <figcaption>Corrélation entre la courbe expérimentale et la courbe théorique du constructeur</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC22.02 : Certifier le fonctionnement d'un nouvel équipement industriel </h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Résultats</h5>
+                                                <h6>Pour la fonction Acquisition, malgré des divergences initiales de niveaux de tension entre la breadboard et le PCB, j'ai certifié la validité du système en corrélant la courbe expérimentale relevée à la courbe théorique du constructeur (image ci-contre), garantissant une détection fiable jusqu'à 60 cm.</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conteneur-bouton">
+                                        <a href="RMS_DDV.pdf" download class="bouton-rectangulaire">Télécharger le Document de VéRIFICATION (DDV)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="maintenance-rds" class="tab-content">
+                                <h3>Maintenance</h3>
+                                <p class="intro-conception">Maintenance et suivi du robot Mini-Sumo</p>
+                                <div class="conception-liste">
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="RMS_23_01.png" alt="Diagnostic maintenance">
+                                                <figcaption>Page 2/8 du DDR : logigramme de contrôle séquentiel des alimentations</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC23.01 : Exécuter l'entretien et le contrôle d'un système en respectant une procédure</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Procédure</h5>
+                                                <h6>J'ai réalisation un contrôle méthodique et séquentiel des différents blocs fonctionnels de la carte électronique (chaînes d'énergie et d'information : alimentation, traitement du signal, acquisition des données et actionneurs) pour trouver d'où venait le problème. (image ci-contre ou page 2/8 du DDR)</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="RMS_23_02.png" alt="Diagnostic maintenance">
+                                                <figcaption>Détail du rebouclage filaire de masse (Maintenance corrective)</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC23.02 : Exécuter une opération de maintenance (corrective, préventive, améliorative)</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Maintenance corrective</h5>
+                                                <h6>A la suite de la réalisation de la procédure, j'ai trouvé la cause du dysfonctionnement de la carte. J'ai donc soudé un files entre le capteur et le pin de la masse. Cette action a solutionné le problème.</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="RMS_23_03.png" alt="Diagnostic maintenance">
+                                                <figcaption>Capture d'écran du terminal série affichant les signaux d'acquisition flottants</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC23.03 : Diagnostiquer un dysfonctionnement dans un système</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Diagnostique</h5>
+                                                <h6>J'ai pu me rendre compte qu'il y avec un problème avec un capteur qui renvoyé des informations aléatoire, grace à un code de teste qui me permer de voir ce que renvoie les capteurs. Lorsqu'un capteur renvoie des informations aléatoire il peut y avoir plusieurs raison mais la plus probable reste le fait qu'il n'a pas de point de référence.</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="RMS_23_04.png" alt="Diagnostic maintenance">
+                                                <figcaption>Page 3/8 du DDR : Repérage microscopique du via manquant sur le PCB</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC23.04 : Identifier la cause racine du dysfonctionnement</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Identification</h5>
+                                                <h6>Pour localiser la défaillance, nous avons adopté une démarche de diagnostic descendante, passant d’une analyse fonctionnelle globale du système à une inspection rigoureuse des zones suspectes jusqu'à trouver la cause racine qui était un via absent.(image ci-contre ou page 3/8 du DDR)</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="conteneur-bouton">
+                                    <a href="RMS_DDR.pdf" download class="bouton-rectangulaire">Télécharger le dossier de réparation (DDR)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carte-projet" onclick="ouvrirModal('modal-kah')">
+                <h2>KART À HÉLICE (KAH)</h2>
+                <p>L'objectif de ce projet est de concevoir un prototype de kart à hélice radiocommandé. Ce travail intègre la chaîne complète de développement électronique (conception des schémas, routage des PCB et programmation des microcontrôleurs). Le système se divise en deux modules : une carte émettrice pour l'interface utilisateur et une carte réceptrice dédiée à la gestion de la puissance et des actionneurs du véhicule. </p>
+                <span class="info-clic">Cliquez pour voir les détails du Kart à Hélice</span>
+            </div>
+
+            <div id="modal-kah" class="modal-overlay">
+                <div class="modal-background" onclick="fermerModal('modal-kah')"></div>
+                <div class="modal-content">
+                    <button class="modal-close" onclick="fermerModal('modal-kah')">&times;</button>
+                    
+                    <div class="modal-header">
+                        <img src="KAH.png" alt="PCB du Kart à Hélice" class="header-image">
+                        <div class="header-overlay">
+                            <div class="badges">
+                                <span class="badge sae"><h2>SAE → S2</h2></span>
+                                <span class="badge date"><h2>Février 2025 - Juin 2025</h2></span>
+                            </div>
+                            <h2>KAH</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <h3>Contexte</h3>
+                        <div class="info-grid">
+                            <div class="info-block">
+                                <h4>OBJECTIFS</h4>
+                                <p>→ <strong>Conception</strong> électronique & routage de PCB</p>
+                                <p>→ Développement informatique</p>
+                                <p>→ <strong>Fabrication</strong> de la carte éléctronique</p>
+                                <p>→ Intégration d'une liaison infrarouge (NEC)</p>
+                                <p>→ Commande de puissance (Moteur Brushless)</p>
+                                <p>→ <strong>Validation</strong> et tests croisés des systèmes</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>ÉQUIPE</h4>
+                                <p>→ Groupe projet de <strong>8 personnes</strong></p>
+                                <p>→ <strong>Division en 2 équipes</strong> de 4 (Émetteur / Récepteur)</p>
+                                <p>→ <strong>Organisation</strong> en binômes</p>
+                                <p>→ Procédure de validation croisée : échange des cartes entre les équipes pour la phase de test</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>MON RÔLE</h4>
+                                <p>→ <strong>Concepteur</strong> de la carte <strong>émettrice</strong>:</p>
+                                <p>En charge du <strong>bloc Énergie</strong> (alimentation de la manette)</p>
+                                <p>En charge du <strong>bloc Traitement</strong> (acquisition des potentiomètres rectilignes)</p>
+                                <p>→ <strong>Vérificateur</strong> de la carte <strong>réceptrice</strong>:</p>
+                                <p>Tests et validation finale des blocs <strong>Énergie et Traitement</strong> embarqués du kart</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>SPÉCIFICATIONS TECHNIQUES</h4>
+                                <p>→ Protocole de communication : Infrarouge (Code NEC)</p>
+                                <p>→ Actionneur principal : Moteur Brushless </p>
+                                <p>→ Stockage d'énergie : Batterie LiPo (Lithium Polymère)</p>
+                                <p>→ Gestion des entrées : Potentiomètres rectilignes</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>ENVIRONNEMENT LOGICIEL</h4>
+                                <p>→ Saisie de schéma &amp; Simulation : Proteus <strong>ISIS</strong></p>
+                                <p>→ Conception de circuits imprimés : Proteus <strong>ARES</strong></p>
+                                <p>→ Programmation embarquée : <strong>Arduino IDE</strong> (Langage C)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="onglets-container">
+                            <div class="onglets-boutons">
+                                <button class="tab-btn active" onclick="changerOnglet(event, 'conception-kah')">Conception</button>
+                                <button class="tab-btn" onclick="changerOnglet(event, 'verification-kah')">Vérification</button>
+                            </div>
+
+                            <div id="conception-kah" class="tab-content active">
+                                <h3>Conception</h3>
+                                <p class="intro-conception">Développement de la carte émetteur</p>
+
+                                <div class="conception-liste">
+                                     <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="KAHC1.png" alt="Schéma électronique">
+                                                <figcaption>Diagramme des blocs fonctionnels de l'émetteur KAH</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC11.01 : Produire une analyse fonctionnelle d'un système simple</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Identification des blocs fonctionnelle</h5>
+                                                <h6>Après avoir pris connaissance du cahier des charges, j'ai identifié 4 blocs fonctionnels pour la partie émetteur (image ci-contre), dont les 2 blocs qui sont à ma charge :
+                                                    <ul><li>le <strong>bloc energie</strong> qui permet d'alimenter la carte</li></ul>
+                                                    <ul><li>le <strong>bloc traitement</strong> qui permet de convertir une donner analogigique en une donner numérique</li></ul>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="KAHC3.png" alt="Saisie de schéma CAO">
+                                                <figcaption>Visualisation 3D préliminaire de l'émetteur sous ARES</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC11.02 : Réaliser un prototype pour des solutions techniques matériel et/ou logiciel</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Maquettage</h5>
+                                                <h6>Après avoir finalisé le schéma électrique sur le logiciel ISIS, j'ai utilisé le le logiciel ARES pour placer tous les composants sur la carte afin de vérifier que nous avons assez de place sur la carte conformément à l'éxigence dimension du Cahier des Charges (CDC).</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="KAHC2.png" alt="Routage du PCB">
+                                                <figcaption>Plan de perçage et typon final exporté pour la fabrication</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC11.03 : Rédiger un dossier de fabrication à partir d'un dossier de conception</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Rédaction</h5>
+                                                <h6>Après avoir finalisé le routage sur le logiciel ARES, J'ai rédiger le Document de Fabrication (DDF). Dans le DDF j'ai mis : <ul><li> les typons (plan de routage)</ul></li> <ul><li>la procédure de fabrication </ul></li>  <ul><li>le plan d'implantation </ul></li> <ul><li>le plan de perçage</ul></li></h6>
+                                                <h6>Ces différent plans ont pour but de nous aider à réaliser la carte</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conteneur-bouton">
+                                        <a href="KAH_DDC.pdf" download="KAH_DDC.pdf" class="bouton-rectangulaire">
+                                            Télécharger le Document de Conception (DDC)
+                                        </a>
+                                        <a href="KAH_DDF_EMTT.pdf" download="KAH_DDF.pdf" class="bouton-rectangulaire">
+                                            Télécharger le Document de Fabrication (DDF)
+                                        </a>
+                                        <a href="KAH_CDC_EMTT.pdf" download="KAH_CDC.pdf" class="bouton-rectangulaire">
+                                            Télécharger le cahier des Charges (CDC)
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="verification-kah" class="tab-content">
+                                <h3>Vérification</h3>
+                                <p class="intro-conception">Vérification de la carte récepteur </p>
+                                <div class="conception-liste">
+                                    
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="KAHV2.png" alt="Schéma électronique">
+                                                <figcaption>Extrait du protocole d'essai écrit pour la cellule Énergie</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC12.01 : Appliquer une procédure d'essais</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Procédure d'essai</h5>
+                                                <h6>Dans le but de valider notre conception, j'ai élaboré et exécuté un protocole d'essais rigoureux afin de vérifier la conformité de la carte électronique avec les exigences du cahier des charges.</h6> 
+                                                <h6>Vous pouvez voir sur l'image ci-contre la procédure d'essaie que j'ai rédigé pour vérifier l'exigence énergie</h6>
+                                                <h6>J'ai ensuite appliqué la procédure sur la carte en suivant chacune des étapes</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="KAHV3.png" alt="Saisie de schéma CAO">
+                                                <figcaption>Rapport dimensionnel mettant en évidence l'écart de 0,13 mm</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC12.02 : Identifier un dysfonctionnement</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Dysfonctionnement</h5>
+                                                <h6>En vérifiant les dimensions, j’ai vu que les résultats des essais ne correspondent pas à ceux attendus, même en respectant les tolérances (image ci-contre). C’est donc une non-conformité.</h6>
+                                                <h6>La carte est trop long de 0,13 mm donc pour rendre la carte conforme il me suffit de la recoupé de 0,13mm</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="KAHV4.png" alt="Saisie de schéma CAO">
+                                                <figcaption>Fiche d'anomalie de découpe mécanique du PCB</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>AC12.03 : Décrire un dysfonctionnement</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Description</h5>
+                                                <h6>Dans le cadre de la vérification de l'exigence dimension, j'ai effectué une série de mesures sur notre prototype. L'analyse des résultats a mis en évidence un défaut de fabrication et non de conception :
+                                                <ul><li>la longueur de la carte ne respecte pas l'intervalle cible. Ce non-respect des cotes nous oblige à revoir la découpe du PCB.</ul></li></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conteneur-bouton">
+                                        <a href="KAH_DDV.pdf" download="KAH_DDV.pdf" class="bouton-rectangulaire">
+                                            Télécharger le Document de Vérification (DDV)
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projet-robotique">
+            <h1>Mon projet en DU Robotique</h1>
+
+            <div class="carte-projet" onclick="ouvrirModal('modal-du-robot')">
+                <h2>ROBOT THÉSÉE</h2>
+                <p>Conception de A à Z d'un robot explorateur de labyrinthe. J'ai pris en charge la <strong>modélisation 3D</strong> de la structure mécanique et développé l'<strong>algorithme de déplacement</strong> permettant au robot d'analyser son environnement pour s'en extraire de manière autonome.</p>                <span class="info-clic">Cliquez pour voir les détails du projet Robotique</span>
+            </div>
+
+            <div id="modal-du-robot" class="modal-overlay">
+                <div class="modal-background" onclick="fermerModal('modal-du-robot')"></div>
+                <div class="modal-content">
+                    <button class="modal-close" onclick="fermerModal('modal-du-robot')">&times;</button>
+                    
+                    <div class="modal-header">
+                        <img src="robotique_header.png" alt="Robotique IUT" class="header-image">
+                        <div class="header-overlay">
+                            <div class="badges">
+                                <span class="badge sae"><h2>DU ROBOTIQUE</h2></span>
+                                <span class="badge date"><h2>2025</h2></span>
+                            </div>
+                            <h2>Robotique Autonome</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <h3>Contexte</h3>
+                        <div class="info-grid">
+                            <div class="info-block">
+                                <h4>OBJECTIFS</h4>
+                                <p>→ Modélisation mécanique</p>
+                                <p>→ Programmation python</p>
+                                <p>→ Gestion de la stratégie</p>
+                                <p>→ Traitement des signaux capteurs</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>ÉQUIPE</h4>
+                                <p>→ Groupe projet de <strong>4 personnes</strong></p>
+                                <p>→ Organisation en binômes</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>RÔLE</h4>
+                                <p>→ Concepteur de la partie mécanique</p>
+                                <p>→ Vérificateur de la partie informatique</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>SPÉCIFICATIONS TECHNIQUES</h4>
+                                <p>→ Technologie de déplacement : roue monome</p>
+                                <p>→ Stockage d'énergie : Batterie </p>
+                                <p>→ Gestion des entrées : capteur lidar</p>
+                                <p>→ Gestion du traitement : raspberry pi 3</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>ENVIRONNEMENT LOGICIEL</h4>
+                                <p>→ Conception de l'architecture mécanique : Onshape</p>
+                                <p>→ Programmation embarquée : VS code (python)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="onglets-container">
+                            <div class="onglets-boutons">
+                                <button class="tab-btn active" onclick="changerOnglet(event, 'conception-robot')">Conception</button>
+                                <button class="tab-btn" onclick="changerOnglet(event, 'verification-robot')">Vérification</button>
+                            </div>
+
+                            <div id="conception-robot" class="tab-content active">
+                                <h3>Conception</h3>
+                                <p class="intro-conception">Architecture et algorithmique du système robotique</p>
+                                <div class="conception-liste">
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="robot_schema.png" alt="Modélisation Robot">
+                                                <figcaption>Modélisation CAO de la structure mécanique et des liaisons moteurs</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>Modélisation transversale mécanique et électrique</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Description</h5>
+                                                <h6>Conception CAO des pièces de structure et choix des moteurs à courant continu associés à des drivers de puissance.</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="verification-robot" class="tab-content">
+                                <h3>Vérification</h3>
+                                <p class="intro-conception">Validation des boucles d'asservissement</p>
+                                <div class="conception-liste">
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="robot_test.png" alt="Courbe de réponse">
+                                                <figcaption>Réponse indicielle expérimentale du système d'asservissement PID</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>Tests d'asservissement en position et vitesse</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Résultats</h5>
+                                                <h6>Analyse des réponses indicielles pour optimiser les coefficients de correction et éviter les dépassements de trajectoire.</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projet-be">
+            <h1>Mes projets en Bureau d'étude</h1>
+
+            <div class="carte-projet" onclick="ouvrirModal('modal-be')">
+                <h2>Dessinateur bureau d'étude — G2E 33</h2>
+                <p>Réalisation d'études techniques pour des installations électriques intérieures en Courants Forts (CFO) et Courants Faibles (CFA).</p>
+                <span class="info-clic">Cliquez pour voir les détails des projets en BE</span>
+            </div>
+
+            <div id="modal-be" class="modal-overlay">
+                <div class="modal-background" onclick="fermerModal('modal-be')"></div>
+                <div class="modal-content">
+                    <button class="modal-close" onclick="fermerModal('modal-be')">&times;</button>
+                    
+                    <div class="modal-header">
+                        <img src="be_header.png" alt="Bureau d'étude G2E 33" class="header-image">
+                        <div class="header-overlay">
+                            <div class="badges">
+                                <span class="badge sae"><h2>STAGES &amp; EXPÉRIENCES</h2></span>
+                                <span class="badge date"><h2>Avril 2026 - Juin 2026</h2></span>
+                            </div>
+                            <h2>Bureau d'Études Électriques</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <h3>Contexte</h3>
+                        <div class="info-grid">
+                            <div class="info-block">
+                                <h4>OBJECTIFS</h4>
+                                <p>Plans d'implantation CFO/CFA</p>
+                                <p>Schémas d'armoires électriques</p>
+                                <p>Synoptiques SSI</p>
+                                <p>Notes de calculs normatives</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>ENTREPRISE</h4>
+                                <p>G2E 33</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>RÔLE</h4>
+                                <p>Dessinateur Projeteur sous la direction d'un ingénieur d'affaires.</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>SPÉCIFICATIONS TECHNIQUES</h4>
+                                <p>→ Protocole de communication : Infrarouge (Code NEC)</p>
+                                <p>→ Actionneur principal : Moteur Brushless commandé par ESC</p>
+                                <p>→ Stockage d'énergie : Batterie LiPo (Lithium Polymère)</p>
+                                <p>→ Gestion des entrées : Potentiomètres rectilignes</p>
+                            </div>
+                            <div class="info-block">
+                                <h4>ENVIRONNEMENT LOGICIEL</h4>
+                                <p>→ Saisie de schéma &amp; Simulation : Proteus ISIS</p>
+                                <p>→ Conception de circuits imprimés : Proteus ARES</p>
+                                <p>→ Programmation embarquée : Arduino IDE (Langage C/C++)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="onglets-container">
+                            <div class="onglets-boutons">
+                                <button class="tab-btn active" onclick="changerOnglet(event, 'conception-be')">Conception</button>
+                                <button class="tab-btn" onclick="changerOnglet(event, 'verification-be')">Vérification</button>
+                            </div>
+
+                            <div id="conception-be" class="tab-content active">
+                                <h3>Conception</h3>
+                                <p class="intro-conception">Modélisation et dessin technique sous AutoCAD</p>
+                                <div class="conception-liste">
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="autocad_plan.png" alt="Plan de réservation">
+                                                <figcaption>Plan AutoCAD d'implantation des terminaux et chemins de câbles</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>Implantation et distribution des réseaux</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Méthodologie</h5>
+                                                <h6>Dessin des cheminements de câbles, positionnement des terminaux CFO/CFA et dimensionnement des armoires de distribution générale.</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="verification-be" class="tab-content">
+                                <h3>Vérification</h3>
+                                <p class="intro-conception">Conformité réglementaire et notes de calculs</p>
+                                <div class="conception-liste">
+                                    <div class="conception-row">
+                                        <div class="image-bloc">
+                                            <figure>
+                                                <img src="calcul_caneco.png" alt="Note de calcul Caneco">
+                                                <figcaption>Rapport Caneco BT d'évaluation des courants de court-circuit (Icc)</figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="texte-bloc">
+                                            <div class="rectangle-bleu">
+                                                <h5>Validation selon la norme NF C 15-100</h5>
+                                            </div>
+                                            <div class="rectangle-bleu">
+                                                <h5>Vérification</h5>
+                                                <h6>Calcul des courants de court-circuit (Icc), des chutes de tension et dimensionnement des protections (disjoncteurs, fusibles).</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Anthony GUILLOU étudiant BUT GEII Gradignan</p>
+    </footer>
+
+    <script>
+    function ouvrirModal(idModal) {
+        document.getElementById(idModal).classList.add('open');
+    }
+
+    function fermerModal(idModal) {
+        document.getElementById(idModal).classList.remove('open');
+    }
+
+    function changerOnglet(evt, nomOnglet) {
+        var conteneurParent = evt.currentTarget.closest('.onglets-container');
+        
+        var tabcontent = conteneurParent.getElementsByClassName("tab-content");
+        for (var i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("active");
+        }
+
+        var tablinks = conteneurParent.getElementsByClassName("tab-btn");
+        for (var i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+
+        document.getElementById(nomOnglet).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+    </script>
+</body>
+</html>
