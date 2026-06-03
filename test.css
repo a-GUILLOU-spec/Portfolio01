@@ -222,7 +222,7 @@ pindex {
 .timeline2::after {
     content: '';
     position: absolute;
-    bottom: 400px;       /* Place la pointe tout en bas de la section */
+    bottom: 550px;       /* Place la pointe tout en bas de la section */
     left: -11px;         /* Aligne la pointe sur la ligne (ajuste selon l'épaisseur) */
     
     /* Dessin du triangle avec les bordures */
