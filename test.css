@@ -198,7 +198,7 @@ pindex {
 
 .timeline2 {
     position: relative;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 40px auto;   /* Un peu plus de marge en haut pour la flèche */
     padding-left: 40px;
     border-left: 3px solid #2c3e50; /* On épaissit un peu la ligne pour le style */
